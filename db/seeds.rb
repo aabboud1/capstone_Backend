@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Item.destroy_all
+
+
+foodType = ["Dessert", "Main", "App", "Soup", "Salad"]
+
+Item.create(price: 15.45,
+            foodType: 'Main',
+            name: "Couscous",
+            qunatity: 50)
+
+20.times{
+    Item.create(
+        price: rand(0..50),
+        foodType: foodType.sample,
+        name: Faker::Food.dish,
+        qunatity: rand(3..20)
+    )
+}
